@@ -1,0 +1,40 @@
+# 🌸 Flames Web App - Feature Roadmap
+Goal: A collection of cute, heartwarming, and interactive mini-apps for friends and couples.
+Priority: Maintain High-Quality UI, Glassmorphism, and "Cute" Animations.
+
+## 🚀 Planned Features (To Do)
+
+### 1. 💌 Secret Admirer Notes
+- **Description**: User creates a password-protected cute note. Generates a sharable link.
+- **Vibe**: Mysterious, sweet.
+- **Tech**: Database needed (SQLite for now), dynamic routing.
+
+### 2. 🎲 The "Hangout" Randomizer
+- **Description**: Randomly suggests date ideas or hangout activities based on filters (Chill, Adventure, Foodie).
+- **Vibe**: Fun, helpful, indecisive-saver.
+- **Tech**: JSON list of activities, random selection logic.
+
+### 3. ✨ Nickname "Mashup" Generator
+- **Description**: Algorithmic combination of two names (e.g., Masood + Siri = Masri).
+- **Vibe**: Playful, "Celebrity Couple" style.
+- **Tech**: String manipulation algorithms.
+
+### 4. 🔮 Zodiac Compatibility Check
+- **Description**: Select two signs, get a compatibility rating + "Vibe Check" description.
+- **Vibe**: Mystical, trendy.
+- **Tech**: Compatibility dictionary/logic.
+
+### 5. 🐻 "Mood Bear" (Virtual Pet/Corner Widget)
+- **Description**: A clickable cute bear/mascot that gives daily challenges or compliments.
+- **Vibe**: Wholesome, gamified.
+- **Tech**: JavaScript widget, local storage for daily tracking.
+
+### 6. 📸 Memory Polaroids
+- **Description**: upload photo -> adds visual frame with "Flames Score" & Names -> Downloadable image.
+- **Vibe**: Nostalgic, Instagram-ready.
+- **Tech**: Canvas API or Pillow (Python backend image processing).
+
+## ✅ Completed Features
+- [x] Basic Flames Calculator (Core Logic)
+- [x] "Love & Friendship" Glassmorphism Theme
+- [x] Marriage Theme (Dynamic Theme Switching) - *Logic exists, currently reverted for clean state*

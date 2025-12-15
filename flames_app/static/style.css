@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #ff9ff3;
+    --text-color: #2d3436;
+    --white: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-color);
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Floating Hearts Animation */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    animation: float 15s linear infinite;
+    bottom: -100px;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    left: -10px;
+    top: 0;
+}
+
+.x1 {
+    left: 10%;
+    width: 30px;
+    height: 30px;
+    animation-duration: 12s;
+}
+
+.x1:before,
+.x1:after {
+    width: 30px;
+    height: 30px;
+}
+
+.x2 {
+    left: 30%;
+    width: 15px;
+    height: 15px;
+    animation-duration: 18s;
+    animation-delay: 2s;
+}
+
+.x2:before,
+.x2:after {
+    width: 15px;
+    height: 15px;
+}
+
+.x3 {
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.x3:before,
+.x3:after {
+    width: 40px;
+    height: 40px;
+}
+
+.x4 {
+    left: 70%;
+    width: 25px;
+    height: 25px;
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.x4:before,
+.x4:after {
+    width: 25px;
+    height: 25px;
+}
+
+.x5 {
+    left: 90%;
+    width: 35px;
+    height: 35px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.x5:before,
+.x5:after {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes float {
+    0% {
+        bottom: -100px;
+        transform: rotate(45deg) translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 100%;
+        transform: rotate(45deg) translateX(-20px);
+        opacity: 0;
+    }
+}
+
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    padding: 3rem;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+.icon-heart {
+    font-size: 2rem;
+    margin: -10px 0 10px;
+    animation: beat 1s infinite alternate;
+}
+
+@keyframes beat {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Result Styles */
+.result-container {
+    margin-top: 2rem;
+    perspective: 1000px;
+}
+
+.result-container.hidden {
+    display: none;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    animation: flipIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes flipIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+#resultTitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#resultMessage {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+#resetBtn {
+    background: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
