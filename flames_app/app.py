@@ -33,7 +33,11 @@ def calculate_flames(name1, name2):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
+
+@app.route('/flames')
+def flames_calculator():
+    return render_template('flames.html')
 
 @app.route('/calculate', methods=['POST'])
 def calculate():

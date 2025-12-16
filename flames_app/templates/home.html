@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}Hub{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Love Hub</h1>
+    <p>Explore our collection of cute apps!</p>
+</header>
+
+<main class="dashboard-grid">
+    <a href="{{ url_for('flames_calculator') }}" class="feature-card">
+        <div class="card-icon">🔥</div>
+        <h2>Flames Calculator</h2>
+        <p>Discover the spark between you and your crush!</p>
+    </a>
+
+    <!-- Placeholder for future features -->
+    <div class="feature-card coming-soon">
+        <div class="card-icon">✨</div>
+        <h2>Nickname Mashup</h2>
+        <p>Coming Soon...</p>
+    </div>
+
+    <div class="feature-card coming-soon">
+        <div class="card-icon">💌</div>
+        <h2>Secret Admirer</h2>
+        <p>Coming Soon...</p>
+    </div>
+</main>
+{% endblock %}
