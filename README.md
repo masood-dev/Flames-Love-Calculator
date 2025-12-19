@@ -5,10 +5,6 @@ the important purpose of this app is to understand the complex logic behind of t
 The flames algorithm :
 
 
-## Features
-
-- Calculate relationship compatibility between two names
-- Lightweight Flask backend and static frontend
 
 ## Quick Start
 
