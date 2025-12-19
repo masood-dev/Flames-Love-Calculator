@@ -4,4 +4,6 @@ Flask>=2.3.0
 # Gunicorn WSGI HTTP Server (required for Azure production deployment)
 gunicorn>=21.2.0
 
-# Add any other dependencies your app needs below
+# Requests - HTTP library for making API calls and web requests
+# Use this to fetch data from external APIs, download files, etc.
+requests>=2.31.0

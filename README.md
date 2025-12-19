@@ -1,7 +1,8 @@
-# FLAMES Calculator
+# Purpose Calculator
 
 A simple Flask web app. which is made of simple childhood love games. Like flames and nickname mashup etc, which you've probably heard in your childhood.
-the important purpose of this app is to understand the complex logic behind of these small, simple games and the algorithms used in this games, algorithms are very complex and mind boggling sometimes but, they are beautiful once you start makeing sense of it. this simple games based on simple algorithms help you understand the basis of an algorithm and program's overall workflow, this example of flames algorithm :
+the important purpose of this app is to understand the complex logic behind of these small, simple games and the algorithms used in this games, algorithms are very complex and mind boggling sometimes but, they are beautiful once you start makeing sense of it. this simple games based on simple algorithms made it easy to understand the logic even better in fun way by playing simple games. you can fork the repository to learn and play around on you own.
+The flames algorithm :
 
 
 ## Features
