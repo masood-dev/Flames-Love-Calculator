@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block title %}Secret Message{% endblock %}
+
+{% block content %}
+<header>
+    <h1>💌</h1>
+    <p>Someone left you a secret message...</p>
+</header>
+
+<main>
+    <!-- Locked State -->
+    <div id="lockedView">
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">🔒</div>
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Secret Message Locked</h2>
+            <p style="margin-bottom: 2rem; color: #666;">Enter the password to reveal the message</p>
+            
+            <form id="unlockForm">
+                <div class="input-group">
+                    <input type="password" id="passwordInput" placeholder="Enter password" required autofocus>
+                </div>
+                
+                <button type="submit" id="unlockBtn">
+                    <span>🔓 Unlock Message</span>
+                    <div class="liquid"></div>
+                </button>
+            </form>
+            
+            <p id="errorMsg" class="error-msg hidden" style="color: #ff6b6b; margin-top: 1rem;">
+                ❌ Incorrect password. Try again!
+            </p>
+        </div>
+    </div>
+
+    <!-- Unlocked State (hidden initially) -->
+    <div id="unlockedView" class="hidden">
+        <div class="card secret-revealed">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💝</div>
+            <h2 style="color: var(--primary-color); margin-bottom: 0.5rem;">From: <span id="senderName"></span></h2>
+            
+            <div class="message-box">
+                <p id="secretMessage" style="font-size: 1.1rem; line-height: 1.6; white-space: pre-wrap;"></p>
+            </div>
+            
+            <div style="margin-top: 1.5rem; font-size: 0.85rem; color: #999;">
+                <span id="viewCount"></span>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% block scripts %}
+<script>
+const noteId = '{{ note_id }}';
+const unlockForm = document.getElementById('unlockForm');
+const lockedView = document.getElementById('lockedView');
+const unlockedView = document.getElementById('unlockedView');
+const errorMsg = document.getElementById('errorMsg');
+const unlockBtn = document.getElementById('unlockBtn');
+
+unlockForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const password = document.getElementById('passwordInput').value;
+    errorMsg.classList.add('hidden');
+    
+    const originalText = unlockBtn.querySelector('span').innerText;
+    unlockBtn.querySelector('span').innerText = '🔓 Unlocking...';
+    unlockBtn.disabled = true;
+
+    try {
+        const response = await fetch('/unlock-note', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ note_id: noteId, password: password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            // Show the secret message with animation
+            document.getElementById('senderName').textContent = data.sender_name;
+            document.getElementById('secretMessage').textContent = data.message;
+            document.getElementById('viewCount').textContent = 
+                `💌 This message has been viewed ${data.view_count} time(s)`;
+            
+            lockedView.classList.add('hidden');
+            unlockedView.classList.remove('hidden');
+            
+            // Add confetti or celebration effect (optional)
+            celebrateUnlock();
+        } else {
+            errorMsg.classList.remove('hidden');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordInput').focus();
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong. Please try again.');
+    } finally {
+        unlockBtn.querySelector('span').innerText = originalText;
+        unlockBtn.disabled = false;
+    }
+});
+
+function celebrateUnlock() {
+    // Simple celebration animation
+    unlockedView.style.animation = 'flipIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+}
+</script>
+{% endblock %}

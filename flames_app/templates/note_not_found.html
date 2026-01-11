@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Note Not Found{% endblock %}
+
+{% block content %}
+<header>
+    <h1>💔</h1>
+    <p>Oops! This note doesn't exist or has expired.</p>
+</header>
+
+<main>
+    <div class="card" style="text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🔍</div>
+        <h2 style="color: var(--primary-color);">Note Not Found</h2>
+        <p style="margin: 1.5rem 0; color: #666;">
+            This secret note might have expired or the link is incorrect.
+        </p>
+        <a href="{{ url_for('home') }}" style="display: inline-block; padding: 12px 30px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 50px; margin-top: 1rem;">
+            🏠 Go Home
+        </a>
+    </div>
+</main>
+{% endblock %}

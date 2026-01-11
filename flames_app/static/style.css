@@ -21,8 +21,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     color: var(--text-color);
+    padding: 2rem 0;
 }
 
 .background-animation {
@@ -210,6 +212,59 @@ input:focus {
     box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
 }
 
+/* Textarea styles */
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+/* Link box for sharing */
+.link-box {
+    margin: 1rem 0;
+}
+
+.link-box input {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+}
+
+/* Message display box */
+.message-box {
+    background: rgba(255, 240, 245, 0.6);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px dashed var(--secondary-color);
+    margin: 1rem 0;
+}
+
+/* Error message */
+.error-msg {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
 .icon-heart {
     font-size: 2rem;
     margin: -10px 0 10px;
@@ -363,4 +418,65 @@ footer a {
 .coming-soon:hover {
     transform: none;
     background: rgba(255, 255, 255, 0.6);
+}
+
+/* Hidden class utility */
+.hidden {
+    display: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 2rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.2rem;
+    }
+
+    .card-icon {
+        font-size: 2rem;
+    }
+
+    #resultTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    #resultTitle {
+        font-size: 2rem;
+    }
 }

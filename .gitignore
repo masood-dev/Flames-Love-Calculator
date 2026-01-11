@@ -29,3 +29,7 @@ Thumbs.db
 # Environment variables
 .env
 .flaskenv
+
+# Database
+flames_app/secret_notes.db
+*.db
