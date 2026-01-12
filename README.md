@@ -57,24 +57,6 @@ python -m flames_app.app
 
 5. Open your browser at http://localhost:5000
 
-## About the `requests` Library
-
-I added the `requests` library because I wanted to learn how to work with external APIs. It's pretty useful for pulling in random quotes, facts, or any data from the internet.
-
-Here's a simple example of how you could use it:
-
-```python
-import requests
-
-resp = requests.get('https://api.quotable.io/random')
-if resp.ok:
-    quote = resp.json().get('content')
-    author = resp.json().get('author')
-    print(f'"{quote}" — {author}')
-```
-
-You could add this to show a random quote on the homepage or something. It's already in `requirements.txt` so feel free to play around with it.
-
 ## Project Structure
 
 Here's how everything is organized:
@@ -85,7 +67,6 @@ crushcheck-fla/
 │   ├── app.py              # Flask routes and game logic
 │   ├── static/             # CSS and JavaScript files
 │   └── templates/          # HTML templates
-├── DEPLOYMENT.md           # How to deploy this thing
 ├── Procfile               # For cloud deployment
 ├── requirements.txt        # Python packages needed
 ├── runtime.txt            # Python version
@@ -97,7 +78,13 @@ The structure is pretty standard for Flask apps. Templates go in `templates/`, C
 
 ## Deployment
 
-Check out [DEPLOYMENT.md](DEPLOYMENT.md) for instructions on how to deploy this. I've included notes for deploying to Azure, Render, and other platforms. The process is actually pretty straightforward once you get the hang of it.
+I deployed this on **Microsoft Azure** because they have a free tier for students (Azure for Students gives you $100 credit).
+
+Azure Web Apps made it pretty straightforward - you just push your code, and it handles the rest. The `Procfile` and `startup.sh` files are basically instructions for Azure on how to run the app. Once it's deployed, you get a real URL that you can share with anyone.
+
+If you're a student like me, definitely check out Azure for Students. The free credits are great for learning and experimenting without worrying about bills.
+
+Other options like Render or Railway are also pretty good if you want to try those instead. They all do similar things - take your code and make it live on the internet.
 
 ## Contributing
 
