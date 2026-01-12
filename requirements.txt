@@ -1,6 +1,9 @@
 # Flask web framework
 Flask>=2.3.0
 
+# Werkzeug - utilities for password hashing
+Werkzeug>=2.3.0
+
 # Gunicorn WSGI HTTP Server (required for Azure production deployment)
 gunicorn>=21.2.0
 
