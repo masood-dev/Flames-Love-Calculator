@@ -1,40 +1,25 @@
-# 🌸 Flames Web App - Feature Roadmap
-Goal: A collection of cute, heartwarming, and interactive mini-apps for friends and couples.
-Priority: Maintain High-Quality UI, Glassmorphism, and "Cute" Animations.
-
-## 🚀 Planned Features (To Do)
-
-### 1. 💌 Secret Admirer Notes
-- **Description**: User creates a password-protected cute note. Generates a sharable link.
-- **Vibe**: Mysterious, sweet.
-- **Tech**: Database needed (SQLite for now), dynamic routing.
-
-### 2. 🎲 The "Hangout" Randomizer
-- **Description**: Randomly suggests date ideas or hangout activities based on filters (Chill, Adventure, Foodie).
-- **Vibe**: Fun, helpful, indecisive-saver.
-- **Tech**: JSON list of activities, random selection logic.
-
-### 3. ✨ Nickname "Mashup" Generator
-- **Description**: Algorithmic combination of two names (e.g., Masood + Siri = Masri).
-- **Vibe**: Playful, "Celebrity Couple" style.
-- **Tech**: String manipulation algorithms.
-
-### 4. 🔮 Zodiac Compatibility Check
-- **Description**: Select two signs, get a compatibility rating + "Vibe Check" description.
-- **Vibe**: Mystical, trendy.
-- **Tech**: Compatibility dictionary/logic.
-
-### 5. 🐻 "Mood Bear" (Virtual Pet/Corner Widget)
-- **Description**: A clickable cute bear/mascot that gives daily challenges or compliments.
-- **Vibe**: Wholesome, gamified.
-- **Tech**: JavaScript widget, local storage for daily tracking.
-
-### 6. 📸 Memory Polaroids
-- **Description**: upload photo -> adds visual frame with "Flames Score" & Names -> Downloadable image.
-- **Vibe**: Nostalgic, Instagram-ready.
-- **Tech**: Canvas API or Pillow (Python backend image processing).
+# 🌸 Crush Check - Feature Roadmap
 
 ## ✅ Completed Features
-- [x] Basic Flames Calculator (Core Logic)
-- [x] "Love & Friendship" Glassmorphism Theme
-- [x] Marriage Theme (Dynamic Theme Switching) - *Logic exists, currently reverted for clean state*
+- [x] Flames Calculator
+- [x] Zodiac Compatibility Check
+- [x] Secret Admirer Notes
+- [x] Glassmorphism UI Theme
+
+## 🚀 Planned Features
+
+### 🎲 The "Hangout" Randomizer
+- Randomly suggests date/hangout ideas based on filters (Chill, Adventure, Foodie).
+- Tech: JSON activity list, random selection logic.
+
+### ✨ Nickname Mashup Generator
+- Combine two names into a celeb-couple-style mashup.
+- Tech: String manipulation algorithms.
+
+### 🐻 Mood Bear Widget
+- Clickable mascot that gives daily challenges or compliments.
+- Tech: JavaScript, localStorage for daily tracking.
+
+### 📸 Memory Polaroids
+- Upload photo, add Flames Score frame, download as image.
+- Tech: Canvas API or Pillow for image processing.

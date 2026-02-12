@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}Zodiac Compatibility{% endblock %}
+
+{% block content %}
+<header>
+    <h1>Zodiac Vibe Check</h1>
+    <p>Select two signs and reveal your cosmic chemistry.</p>
+</header>
+
+<main>
+    <form id="zodiacForm">
+        <div class="input-group">
+            <label for="sign1">Your Sign</label>
+            <select id="sign1" name="sign1" required>
+                <option value="" selected disabled>Pick your sign</option>
+                {% for sign, details in signs.items() %}
+                <option value="{{ sign }}">{{ sign }} · {{ details.date }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="icon-heart">🔮</div>
+
+        <div class="input-group">
+            <label for="sign2">Their Sign</label>
+            <select id="sign2" name="sign2" required>
+                <option value="" selected disabled>Pick their sign</option>
+                {% for sign, details in signs.items() %}
+                <option value="{{ sign }}">{{ sign }} · {{ details.date }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="zodiac-actions">
+            <button type="button" id="swapSigns" class="ghost-button">Swap Signs</button>
+        </div>
+
+        <button type="submit" id="zodiacBtn">
+            <span>Check Compatibility</span>
+            <div class="liquid"></div>
+        </button>
+    </form>
+
+    <div id="zodiacResult" class="result-container hidden">
+        <div class="card zodiac-card">
+            <div class="zodiac-pair">
+                <span id="sign1Label"></span>
+                <span class="zodiac-connector">✦</span>
+                <span id="sign2Label"></span>
+            </div>
+            <div class="score-circle" id="scoreCircle">
+                <div class="score-text">
+                    <span id="zodiacScore"></span>
+                    <small>Compatibility</small>
+                </div>
+            </div>
+            <p id="zodiacVibe" class="zodiac-vibe"></p>
+            <p id="zodiacInsight" class="zodiac-insight"></p>
+            <button id="zodiacReset">Check Another</button>
+        </div>
+    </div>
+</main>
+{% endblock %}

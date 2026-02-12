@@ -1,4 +1,0 @@
-[config]
-# This file tells Azure App Service build system (Oryx) how to build your app
-# SCM_DO_BUILD_DURING_DEPLOYMENT=true means Azure will install dependencies automatically
-SCM_DO_BUILD_DURING_DEPLOYMENT=true

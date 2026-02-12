@@ -212,6 +212,34 @@ input:focus {
     box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
 }
 
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #666 50%),
+        linear-gradient(135deg, #666 50%, transparent 50%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2));
+    background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px),
+        0 0;
+    background-size: 5px 5px, 5px 5px, 100% 100%;
+    background-repeat: no-repeat;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
 /* Textarea styles */
 textarea {
     width: 100%;
@@ -351,6 +379,99 @@ button:active {
     margin-top: 0;
     font-size: 1rem;
     padding: 10px;
+}
+
+.zodiac-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.ghost-button {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+}
+
+.ghost-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.zodiac-card {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.zodiac-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.zodiac-connector {
+    color: var(--secondary-color);
+}
+
+.score-circle {
+    width: 140px;
+    height: 140px;
+    margin: 1rem auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(var(--primary-color) calc(var(--score, 0) * 1%), rgba(255, 255, 255, 0.6) 0);
+    position: relative;
+}
+
+.score-circle::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+}
+
+.score-text {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-weight: 600;
+}
+
+.score-text span {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.score-text small {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 500;
+}
+
+.zodiac-vibe {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.zodiac-insight {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.5rem;
 }
 
 footer {
